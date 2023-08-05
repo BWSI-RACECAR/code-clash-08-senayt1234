@@ -15,7 +15,7 @@ a secret lab. In the image below, the RACECAR’s traversal pattern is provided 
 
 - The RACECAR will always start from the charging ports as seen in “C”.
 - The RACECAR will then travel to points “A” or “B” based on the transition distance variable “tdist”. 
-- The RACECAR scans the area between itself and the lab and travels between points “A” and “B” based on the scanning distance variable “sdist”.
+- The RACECAR scans the area between itself and the lab (what is this????) and travels between points “A” and “B” based on the scanning distance variable “sdist”.
 - Once the RACECAR reaches the other checkpoint (A or B), it returns to the charging port “C”.
 
 Assume that the RACECAR uses 250mAh on average for every 1 meter of travel (including for motors + scanning).
@@ -38,10 +38,8 @@ class Solution:
         # return type: float
 
         #TODO: Write code below to return a float with the solution to the prompt.
-        meter = battcap/250
-        distance = meter/4
-
-        return distance*2
+        # 250 mAh
+        return (battcap / 250.0) ** 2 / 8.0
 
 def main():
     battcap = int(input())
